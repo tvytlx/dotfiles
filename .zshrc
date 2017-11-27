@@ -63,7 +63,7 @@ alias aczsh="source ~/.zshrc"
 ctenv () {for ev in $(credentials-to-env env | grep -F "`awk '{print $1}' Secretfile`"); do export $ev; done}
 # export VAULT_ADDR=
 # export VAULT_TOKEN=
-source .env_secret
+source $HOME/.env_secret
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
@@ -79,3 +79,6 @@ alias ipy="ipython3"
 
 # fzf (fuzzy search)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# utils alias
+alias timestamp="date -r"

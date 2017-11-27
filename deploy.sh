@@ -3,6 +3,9 @@
 CONFIG_FILES=(
 .tmux.conf
 .zshrc
+.pylintrc
+.vimrc
+.gitconfig
 )
 
 # backpack dir

@@ -1,0 +1,36 @@
+[user]
+	name = Xiao Tan
+	email = tvytlx@gmail.com
+[alias]
+	st = status -uno
+	co = checkout
+        a = add
+        ai = add -i
+        adi = add -i
+        addi = add -i
+        br = branch
+        brd = branch -d
+        co = checkout
+        cob = checkout -b
+        com = checkout master
+        cod = checkout develop
+        di = diff
+        dic = diff --cached
+        ci = commit
+        cim = commit -m
+        l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+        mg = merge --no-ff
+        mgf = merge
+        mgm = merge --no-ff master
+        rsh = reset HEAD
+        rbi = rebase -i
+        rbm = rebase master
+        rbd = rebase develop
+        rbc = rebase --continue
+        chp = cherry-pick
+        chpc = cherry-pick --continue
+        chpa = cherry-pick --abort
+        ps = push
+        undo = reset HEAD~1 --mixed
+	proxy = config --global https.proxy socks5://127.0.0.1:1080
+	unproxy = config --global --unset https.proxy
