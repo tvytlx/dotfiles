@@ -2,6 +2,7 @@
 
 CONFIG_FILES=(
 .tmux.conf
+.zshrc
 )
 
 # backpack dir
