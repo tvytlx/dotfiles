@@ -66,22 +66,18 @@ alias ipy="ipython3"
 
 # utils alias
 alias timestamp="date -r"
+alias ro="git st|fpp"
 
 case `uname` in
     Linux)
         ;;
     Darwin)
-        # macport
-        export PATH="$PATH:/opt/local/bin"
-        export OPENSSL_INCLUDE_DIR=`brew --prefix openssl`/include
-        export OPENSSL_LIB_DIR=`brew --prefix openssl`/lib
-        export DEP_OPENSSL_INCLUDE=`brew --prefix openssl`/include
         # chrome
         export CHROME_PATH="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
         # vim
         alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
-        # nvm
+        # nvm 太慢了。脚本里似乎有网络请求。
         export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+        #[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
         ;;
 esac

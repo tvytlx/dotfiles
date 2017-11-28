@@ -2,7 +2,7 @@
 	name = Xiao Tan
 	email = tvytlx@gmail.com
 [alias]
-	st = status -uno
+	st = status -uno --porcelain
 	co = checkout
         a = add
         ai = add -i
