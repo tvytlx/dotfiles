@@ -16,4 +16,18 @@ filetype on                      " 检测文件类型
 filetype plugin on               " 自动导入对应文件类型相关的插件
 filetype indent on               " 使用对应文件类型的对齐
 
+set cursorline                   " 突出显示当前行
+set autoread                     " 文件修改后自动重载
+
+set nobackup
+set noswapfile
+set wildignore=*.swp,*.bak,*.pyc,*.class,.svn
+
+
 inoremap jj <Esc>
+
+call plug#begin('~/.vim/plugged')
+Plug 'Valloric/YouCompleteMe'
+call plug#end()
+
+let g:ycm_python_binary_path = '/usr/bin/python'
