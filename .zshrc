@@ -66,7 +66,8 @@ alias ipy="ipython3"
 
 # utils alias
 alias timestamp="date -r"
-alias ro="git st|fpp"
+alias opr="git st|fpp"
+alias how="tldr"
 
 case `uname` in
     Linux)
