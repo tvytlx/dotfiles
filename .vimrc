@@ -23,11 +23,17 @@ set nobackup
 set noswapfile
 set wildignore=*.swp,*.bak,*.pyc,*.class,.svn
 
+if has('mouse')
+    set mouse=a
+endif
 
 inoremap jj <Esc>
 
 call plug#begin('~/.vim/plugged')
 Plug 'Valloric/YouCompleteMe'
 call plug#end()
+
+" theme主题
+set background=dark
 
 let g:ycm_python_binary_path = '/usr/bin/python'

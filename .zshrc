@@ -34,7 +34,7 @@ alias cnpm="npm --registry=https://registry.npm.taobao.org \
 
 # add .local to path
 export PATH=$HOME/.local/bin:$PATH
-
+export PATH=/usr/local/bin:$PATH
 # vim
 export EDITOR=vim
 
@@ -91,6 +91,6 @@ case `uname` in
         ;;
     Darwin)
         export CHROME_PATH="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
-        alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
+        alias vim="mvim -v"
         ;;
 esac
