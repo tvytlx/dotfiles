@@ -69,16 +69,28 @@ alias timestamp="date -r"
 alias opr="git st|fpp"
 alias how="tldr"
 
+# nodejs related
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+alias cnpm="npm --registry=https://registry.npm.taobao.org \
+    --cache=$HOME/.npm/.cache/cnpm \
+    --disturl=https://npm.taobao.org/dist \
+    --userconfig=$HOME/.cnpmrc"
+
 case `uname` in
     Linux)
+        export http_proxy='http://127.0.0.1:8118'
+        export https_proxy='http://127.0.0.1:8118'
+        alias proxy="sudo /usr/sbin/privoxy /etc/privoxy/config&&\
+            export https_proxy='http://127.0.0.1:8118'&&\
+            export http_proxy='http://127.0.0.1:8118'"
+        alias unproxy="unset http_proxy&&unset https_proxy"
+        export NVM_NODEJS_ORG_MIRROR="https://npm.taobao.org/mirrors/node"
         ;;
     Darwin)
-        # chrome
         export CHROME_PATH="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
-        # vim
         alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
-        # nvm 太慢了。脚本里似乎有网络请求。
-        export NVM_DIR="$HOME/.nvm"
-        #[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
         ;;
 esac
