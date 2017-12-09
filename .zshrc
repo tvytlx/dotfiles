@@ -3,6 +3,7 @@
 #
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+export TERM=xterm-256color
 
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=10000000
@@ -21,20 +22,17 @@ plugins=(git zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
-# pyenv settings
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-# alias for cnpm
-alias cnpm="npm --registry=https://registry.npm.taobao.org \
-  --cache=$HOME/.npm/.cache/cnpm \
-  --disturl=https://npm.taobao.org/dist \
-  --userconfig=$HOME/.cnpmrc"
-
 # add .local to path
 export PATH=$HOME/.local/bin:$PATH
 export PATH=/usr/local/bin:$PATH
+
+# pyenv settings
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
 # vim
 export EDITOR=vim
 
@@ -53,7 +51,6 @@ alias aczsh="source ~/.zshrc"
 ctenv () {for ev in $(credentials-to-env env | grep -F "`awk '{print $1}' Secretfile`"); do export $ev; done}
 # export VAULT_ADDR=
 # export VAULT_TOKEN=
-# source $HOME/.env_secret
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
@@ -90,7 +87,9 @@ case `uname` in
         export NVM_NODEJS_ORG_MIRROR="https://npm.taobao.org/mirrors/node"
         ;;
     Darwin)
+        source $HOME/.env_secret
         export CHROME_PATH="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
         alias vim="mvim -v"
         ;;
 esac
+

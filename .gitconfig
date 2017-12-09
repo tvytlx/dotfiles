@@ -32,6 +32,7 @@
     chpc = cherry-pick --continue
     chpa = cherry-pick --abort
     ps = push
+    psf = push -f
     undo = reset HEAD~1 --mixed
     proxy = config --global https.proxy socks5://127.0.0.1:1080
     unproxy = config --global --unset https.proxy
