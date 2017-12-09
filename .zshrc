@@ -65,6 +65,7 @@ alias ipy="ipython3"
 alias timestamp="date -r"
 alias opr="git st|fpp"
 alias how="tldr"
+alias g="git"
 
 # nodejs related
 export NVM_DIR="$HOME/.nvm"
