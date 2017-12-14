@@ -2,6 +2,8 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 #
 # Path to your oh-my-zsh installation.
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 export ZSH=$HOME/.oh-my-zsh
 export TERM=xterm-256color
 
@@ -42,7 +44,7 @@ autoload -U compinit && compinit -u
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ;} history -a"
 
 # virtualenv settings (append ctenv command for saving time)
-alias acv="source venv/bin/activate;ctenv"
+alias acv="pipenv shell&&ctenv"
 
 # zsh
 alias aczsh="source ~/.zshrc"
@@ -66,6 +68,7 @@ alias timestamp="date -r"
 alias opr="git st|fpp"
 alias how="tldr"
 alias g="git"
+lint () {flake8 `git st |awk '{ print $2 }'|xargs`}
 
 # nodejs related
 export NVM_DIR="$HOME/.nvm"
