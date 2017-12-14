@@ -6,23 +6,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'airblade/vim-gitgutter'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-    Plug 'scrooloose/nerdtree'
-
-    Plug 'ctrlpvim/ctrlp.vim'
-    let g:ctrlp_map = '<leader>p'
-    let g:ctrlp_cmd = 'CtrlP'
-    nnoremap <leader>f :CtrlPMRU<CR>
-    let g:ctrlp_custom_ignore = {
-        \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
-        \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
-        \ }
-    let g:ctrlp_working_path_mode='r'
-    let g:ctrlp_match_window_bottom=1
-    let g:ctrlp_max_height=15
-    let g:ctrlp_match_window_reversed=0
-    let g:ctrlp_mruf_max=500
-    let g:ctrlp_follow_symlinks=1
-
     Plug 'nvie/vim-flake8'
     Plug 'ruanyl/vim-gh-line'
     Plug 'gabrielelana/vim-markdown'
@@ -32,10 +15,13 @@ filetype plugin indent on
 let mapleader = "\<space>"
 nmap <leader>g  :YcmCompleter GoTo<CR>
 let g:ycm_python_binary_path = 'python'
-map <D-b> :NERDTreeToggle<CR>
-nnoremap <D-c> "+y<CR>
-
 set clipboard=unnamed
+" theme主题
+colo molokai
+let g:airline_theme='bubblegum'
+" 自动补全弹出面板的颜色
+highlight Pmenu guibg=black gui=bold
+
 " 相对行号: 行号变成相对，可以用 nj/nk 进行跳转
 set relativenumber number
 au FocusLost * :set norelativenumber number
@@ -120,10 +106,4 @@ nnoremap <C-y> 2<C-y>
 
 " Map ; to : and save a million keystrokes 用于快速进入命令行
 nnoremap ; :
-
-" theme主题
-colo molokai
-let g:airline_theme='bubblegum'
-" 自动补全弹出面板的颜色
-highlight Pmenu guibg=black gui=bold
 
