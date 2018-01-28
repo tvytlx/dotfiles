@@ -24,8 +24,9 @@ plugins=(git zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
-# add .local to path
+# add third part program bin to path
 export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 
 # pyenv settings
@@ -68,7 +69,7 @@ alias timestamp="date -r"
 alias opr="git st|fpp"
 alias how="tldr"
 alias g="git"
-lint () {flake8 `git st |awk '{ print $2 }'|xargs`}
+lint () {flake8 `git st | grep -E ".*\.py" |awk '{ print $2 }'|xargs`}
 
 # nodejs related
 export NVM_DIR="$HOME/.nvm"
