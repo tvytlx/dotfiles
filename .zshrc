@@ -1,7 +1,3 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-#
-# Path to your oh-my-zsh installation.
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export ZSH=$HOME/.oh-my-zsh
@@ -11,8 +7,6 @@ HISTFILE="$HOME/.zsh_history"
 HISTSIZE=10000000
 SAVEHIST=10000000
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
@@ -25,6 +19,7 @@ plugins=(git zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 
 # add third part program bin to path
+export PATH="$PATH:$HOME/.rvm/bin"
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=/usr/local/bin:$PATH
@@ -54,9 +49,6 @@ alias aczsh="source ~/.zshrc"
 ctenv () {for ev in $(credentials-to-env env | grep -F "`awk '{print $1}' Secretfile`"); do export $ev; done}
 # export VAULT_ADDR=
 # export VAULT_TOKEN=
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
 
 # ipython
 alias ipy="ipython3"
