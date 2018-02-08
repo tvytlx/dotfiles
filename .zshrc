@@ -61,6 +61,7 @@ alias timestamp="date -r"
 alias opr="git st|fpp"
 alias how="tldr"
 alias g="git"
+alias gpip="~/.pyenv/shims/pip"
 lint () {flake8 `git st | grep -E ".*\.py" |awk '{ print $2 }'|xargs`}
 
 # nodejs related
