@@ -4,10 +4,8 @@
 [alias]
     st = status -uno --porcelain
     co = checkout
-    a = add
-    ai = add -i
     adi = add -i
-    addi = add -i
+    adu = add -u
     br = branch
     brd = branch -d
     co = checkout
