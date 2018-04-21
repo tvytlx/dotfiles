@@ -23,6 +23,8 @@ export PATH="$PATH:$HOME/.rvm/bin"
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=/usr/local/bin:$PATH
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$PATH
 
 # pyenv settings
 export PYENV_ROOT="$HOME/.pyenv"
@@ -39,8 +41,8 @@ export EDITOR=vim
 autoload -U compinit && compinit -u
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ;} history -a"
 
-# virtualenv settings (append ctenv command for saving time)
-alias acv="pipenv shell&&ctenv"
+# virtualenv settings
+alias acv="source venv/bin/activate"
 
 # zsh
 alias aczsh="source ~/.zshrc"
@@ -62,7 +64,10 @@ alias opr="git st|fpp"
 alias how="tldr"
 alias g="git"
 alias gpip="~/.pyenv/shims/pip"
-lint () {flake8 `git st | grep -E ".*\.py" |awk '{ print $2 }'|xargs`}
+alias gr="go run"
+alias gb="go build"
+flint () {flake8 `git st | grep -E ".*\.py" |awk '{ print $2 }'|xargs`}
+plint () {pylint `git st | grep -E ".*\.py" |awk '{ print $2 }'|xargs`}
 
 # nodejs related
 export NVM_DIR="$HOME/.nvm"
@@ -82,12 +87,14 @@ case `uname` in
             export https_proxy='http://127.0.0.1:8118'&&\
             export http_proxy='http://127.0.0.1:8118'"
         alias unproxy="unset http_proxy&&unset https_proxy"
+        alias ccopy="xclip -sel c <"
         export NVM_NODEJS_ORG_MIRROR="https://npm.taobao.org/mirrors/node"
         ;;
     Darwin)
         source $HOME/.env_secret
         export CHROME_PATH="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
         alias vim="mvim -v"
+        alias ccopy="pbcopy <"
         ;;
 esac
 
