@@ -1,6 +1,6 @@
 [user]
-    name = Xiao Tan
-    email = tvytlx@gmail.com
+	name = Xiao Tan
+	email = tvytlx@gmail.com
 [alias]
     st = status -uno --porcelain
     co = checkout
@@ -32,10 +32,29 @@
     ps = push
     psf = push -f
     undo = reset HEAD~1 --mixed
-    proxy = config --global https.proxy socks5://127.0.0.1:1080
-    unproxy = config --global --unset https.proxy
+    proxy = config --global http.proxy 'socks5://127.0.0.1:1080'
+    unproxy = config --global --unset http.proxy
 [core]
+    pager = "diff-so-fancy | less --tabs=4 -RFX"
     editor = vim
+[color]
+    ui = true
+[color "diff"]
+    meta = "yellow"
+    frag = "magenta bold"
+    commit = "yellow bold"
+    old = "red bold"
+    new = "green bold"
+    whitespace = "red reverse"
+[color "diff-highlight"]
+    oldNormal = "red bold"
+    oldHighlight = "red bold 52"
+    newNormal = "green bold"
+    newHighlight = "green bold 22"
 [push]
     default = current
-[https]
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

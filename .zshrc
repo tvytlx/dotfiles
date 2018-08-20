@@ -37,9 +37,7 @@ fi
 export EDITOR=vim
 
 # autojump
-[[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
-autoload -U compinit && compinit -u
-export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ;} history -a"
+source $GOPATH/src/github.com/autojump-go/autojump.zsh
 
 # virtualenv settings
 alias acv="source venv/bin/activate"
@@ -59,6 +57,7 @@ alias ipy="ipython3"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # utils alias
+alias lsh="ls -Slh"
 alias timestamp="date -r"
 alias opr="git st|fpp"
 alias how="tldr"
