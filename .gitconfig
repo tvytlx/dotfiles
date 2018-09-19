@@ -7,7 +7,7 @@
     adi = add -i
     adu = add -u
     br = branch
-    brd = branch -d
+    brd = branch -D
     co = checkout
     cob = checkout -b
     com = checkout master
@@ -17,6 +17,8 @@
     ci = commit
     cim = commit -m
     cia = commit --amend
+    cln = clone
+    h0 = show HEAD^0
     l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     mg = merge --no-ff
     mgf = merge
