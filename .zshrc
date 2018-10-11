@@ -19,7 +19,6 @@ plugins=(git zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 
 # add third part program bin to path
-export PATH="$PATH:$HOME/.rvm/bin"
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=/usr/local/bin:$PATH
@@ -37,7 +36,7 @@ fi
 export EDITOR=vim
 
 # autojump
-source $GOPATH/src/github.com/autojump-go/autojump.zsh
+source $GOPATH/src/github.com/tvytlx/autojump-go/autojump-go.zsh
 
 # virtualenv settings
 alias acv="source venv/bin/activate"
@@ -57,21 +56,30 @@ alias ipy="ipython3"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # utils alias
+alias cat="bat"
+alias sshs="~/.ssh-manager.sh"
 alias lsh="ls -Slh"
 alias timestamp="date -r"
 alias opr="git st|fpp"
 alias how="tldr"
-alias g="git"
+# alias g="(afplay -v 100 ~/Toy/dotfiles/engine.wav &); git"
 alias gpip="~/.pyenv/shims/pip"
 alias gr="go run"
 alias gb="go build"
+alisocks () {lsof -c AliMgrSoc | grep -E "localhost:\d+ \(LISTEN\)" | awk '{ split($9,a,":"); print a[2] }' | pbcopy}
 flint () {flake8 `git st | grep -E ".*\.py" |awk '{ print $2 }'|xargs`}
 plint () {pylint `git st | grep -E ".*\.py" |awk '{ print $2 }'|xargs`}
+mlint () {mypy `git st | grep -E ".*\.py" |awk '{ print $2 }'|xargs`}
+shut_up_little_apps() {ps x | grep " /Applications" | awk '{print $1}' | xargs kill}
 
 # nodejs related
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+# proxy
+export PROXY_COMMAND="socat - PROXY:127.0.0.1:%h:%p,proxyport=1086"
 
 alias cnpm="npm --registry=https://registry.npm.taobao.org \
     --cache=$HOME/.npm/.cache/cnpm \
@@ -93,7 +101,11 @@ case `uname` in
         source $HOME/.env_secret
         export CHROME_PATH="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
         alias vim="mvim -v"
-        alias ccopy="pbcopy <"
+        alias ccopy="pbcopy"
         ;;
 esac
 
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+eval "$(pyenv virtualenv-init -)"
