@@ -6,6 +6,7 @@
     co = checkout
     adi = add -i
     adu = add -u
+    brl = for-each-ref --count=5 --sort=-committerdate refs/heads/ --format='%(refname:short)'
     br = branch
     brd = branch -D
     co = checkout
@@ -19,7 +20,7 @@
     cia = commit --amend
     cln = clone
     h0 = show HEAD^0
-    l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    l = log --color --graph  --abbrev-commit -n 1
     mg = merge --no-ff
     mgf = merge
     mgm = merge --no-ff master

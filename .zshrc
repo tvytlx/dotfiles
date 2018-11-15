@@ -36,7 +36,7 @@ fi
 export EDITOR=vim
 
 # autojump
-source $GOPATH/src/github.com/tvytlx/autojump-go/autojump-go.zsh
+source $GOPATH/src/github.com/tanx-code/autojump-go/autojump-go.zsh
 
 # virtualenv settings
 alias acv="source venv/bin/activate"
@@ -66,6 +66,7 @@ alias how="tldr"
 alias gpip="~/.pyenv/shims/pip"
 alias gr="go run"
 alias gb="go build"
+alias pye="python -c"
 alisocks () {lsof -c AliMgrSoc | grep -E "localhost:\d+ \(LISTEN\)" | awk '{ split($9,a,":"); print a[2] }' | pbcopy}
 flint () {flake8 `git st | grep -E ".*\.py" |awk '{ print $2 }'|xargs`}
 plint () {pylint `git st | grep -E ".*\.py" |awk '{ print $2 }'|xargs`}
