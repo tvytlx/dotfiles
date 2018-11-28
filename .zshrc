@@ -67,6 +67,7 @@ alias gpip="~/.pyenv/shims/pip"
 alias gr="go run"
 alias gb="go build"
 alias pye="python -c"
+alias brew="ALL_PROXY='socks5://localhost:1086' brew"
 alisocks () {lsof -c AliMgrSoc | grep -E "localhost:\d+ \(LISTEN\)" | awk '{ split($9,a,":"); print a[2] }' | pbcopy}
 flint () {flake8 `git st | grep -E ".*\.py" |awk '{ print $2 }'|xargs`}
 plint () {pylint `git st | grep -E ".*\.py" |awk '{ print $2 }'|xargs`}
