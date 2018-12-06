@@ -56,9 +56,9 @@ alias ipy="ipython3"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # utils alias
+alias ls="exa"
 alias cat="bat"
 alias sshs="~/.ssh-manager.sh"
-alias lsh="ls -Slh"
 alias timestamp="date -r"
 alias opr="git st|fpp"
 alias how="tldr"
