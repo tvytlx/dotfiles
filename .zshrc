@@ -18,10 +18,11 @@ plugins=(git zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
+# tmux
+export DISABLE_AUTO_TITLE='true'
+
 case `uname` in
     Linux)
-        export http_proxy='http://127.0.0.1:8118'
-        export https_proxy='http://127.0.0.1:8118'
         alias ccopy="xclip -sel c <"
         export NVM_NODEJS_ORG_MIRROR="https://npm.taobao.org/mirrors/node"
         export GOROOT=/usr/local/go

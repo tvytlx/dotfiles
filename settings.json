@@ -1,0 +1,71 @@
+// 将设置放入此文件中以覆盖默认设置
+{
+    "files.insertFinalNewline": true,
+    "javascript.format.enable": false,
+    "editor.tabSize": 4,
+    "editor.cursorStyle": "block",
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/*.pyc": true,
+        "**/venv": true,
+        "**/*.egg-info": true,
+        "**/.vscode": true,
+        "**/.cache": true,
+        "**/__pycache__": true
+    },
+    "editor.minimap.enabled": false,
+    "editor.lineNumbers": "relative",
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 2000,
+    "python.formatting.provider": "black",
+    "workbench.colorTheme": "Monokai",
+    "editor.fontLigatures": false,
+    "editor.fontFamily": "consolas",
+    "editor.letterSpacing": -0.1,
+    "editor.fontSize": 14,
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "vue"
+    ],
+    "workbench.activityBar.visible": true,
+    "window.zoomLevel": 1,
+    "workbench.startupEditor": "newUntitledFile",
+    "zenMode.fullScreen": false,
+    "workbench.colorCustomizations": {
+        "editor.selectionBackground": "#90caf9",
+        "editor.selectionHighlightBackground": "#90caf9",
+        "statusBar.background": "#005f5f",
+        "statusBar.noFolderBackground": "#005f5f",
+        "statusBar.debuggingBackground": "#005f5f"
+    },
+    "extensions.ignoreRecommendations": true,
+    "editor.renderIndentGuides": false,
+    "explorer.confirmDelete": false,
+    "files.associations": {
+        "*.mapping": "json",
+        "*.pyx": "cython"
+    },
+    "python.linting.flake8Enabled": true,
+    "python.venvFolders": [
+        "venv",
+        ".pyenv",
+        "envs",
+        ".direnv"
+    ],
+    "editor.detectIndentation": false,
+    "python.formatting.blackArgs": [
+        "-l",
+        "89",
+        "-S"
+    ],
+    "terminal.integrated.rendererType": "dom",
+    "rust.goto_def_racer_fallback": true,
+    "python.formatting.blackPath": "/usr/local/bin/black",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "vsicons.dontShowNewVersionMessage": true
+}
