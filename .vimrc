@@ -1,12 +1,6 @@
 set encoding=utf-8
 set termguicolors
 let mapleader = "\<space>"
-
-call plug#begin('~/.vim/plugged')
-    Plug 'airblade/vim-gitgutter'
-    Plug 'ruanyl/vim-gh-line'
-    Plug 'gabrielelana/vim-markdown'
-call plug#end()
 filetype plugin indent on
 
 " 神奇的开启了系统剪贴板
