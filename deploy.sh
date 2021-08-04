@@ -38,7 +38,8 @@ done
 
 # make soft link to other files
 echo "install diff-so-fancy"
-sudo ln -s /usr/local/bin/diff-so-fancy ~/diff-so-fancy
+sudo mkdir -p /usr/local/bin
+sudo ln -s `pwd`/diff-so-fancy /usr/local/bin/diff-so-fancy
 ls -l /usr/local/bin/diff-so-fancy | awk '{print "added "$9$10$11}'
 
 echo "install vim colors"
