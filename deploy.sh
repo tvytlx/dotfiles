@@ -48,6 +48,7 @@ cp `pwd`/molokai.vim ~/.vim/colors
 
 echo "install autojump"
 git clone git://github.com/wting/autojump.git
-cd autojump && ./install.py or ./uninstall.py
+cd autojump
+./install.py
 cd ..
 echo "autojump installed"
