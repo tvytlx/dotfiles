@@ -45,3 +45,9 @@ ls -l /usr/local/bin/diff-so-fancy | awk '{print "added "$9$10$11}'
 echo "install vim colors"
 mkdir -p ~/.vim/colors
 cp `pwd`/molokai.vim ~/.vim/colors
+
+echo "install autojump"
+git clone git://github.com/wting/autojump.git
+cd autojump && ./install.py or ./uninstall.py
+cd ..
+echo "autojump installed"
